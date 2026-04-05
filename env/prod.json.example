@@ -1,0 +1,7 @@
+{
+  "AUTH0_DOMAIN": "mediator-app.us.auth0.com",
+  "AUTH0_CLIENT_ID": "<prod mobile client id from Auth0 dashboard>",
+  "AUTH0_SCHEME": "com.mediatorapp",
+  "AUTH0_ROLE_CLAIM_NAMESPACE": "https://mymediator.com",
+  "API_BASE_URL": "https://api.mymediator.com"
+}

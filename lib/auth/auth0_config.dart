@@ -1,15 +1,15 @@
-// TODO: Replace these with your actual Auth0 application credentials.
-// Found in Auth0 Dashboard → Applications → your app.
+// Values are injected at build time via --dart-define-from-file=env/<env>.json
+// Never hard-code these here.
 class Auth0Config {
-  static const domain =
-      'mediator-app.us.auth0.com'; // e.g. 'dev-abc123.us.auth0.com'
-  static const clientId = '9M8xTJ8E111JTKFfA4ALNTjX0D02vbsE';
+  static const domain = String.fromEnvironment('AUTH0_DOMAIN');
+  static const clientId = String.fromEnvironment('AUTH0_CLIENT_ID');
+  static const scheme = String.fromEnvironment('AUTH0_SCHEME');
+  static const roleClaimNamespace =
+      String.fromEnvironment('AUTH0_ROLE_CLAIM_NAMESPACE');
 
-  // Must match the callback/logout URLs registered in Auth0 Dashboard.
-  // Android: com.example.mediator_chat://YOUR_AUTH0_DOMAIN/android/com.example.mediator_chat/callback
-  // iOS:     com.example.mediator_chat://YOUR_AUTH0_DOMAIN/ios/com.example.mediator_chat/callback
-  static const scheme = 'com.example.mediator_chat';
+  static String get roleClaimKey => '$roleClaimNamespace/role';
+}
 
-  // Custom claim namespace — set in Auth0 Action (post-login).
-  static const roleClaimKey = 'https://mediatorapp.com/role';
+class AppConfig {
+  static const apiBaseUrl = String.fromEnvironment('API_BASE_URL');
 }
